@@ -109,7 +109,7 @@ function doSearch(s){
            // qwer.classList.add('lcard')
             sec0.append(qwer)
             qwer.innerHTML = `
-                        <img src="/ASSETS/${q.img}" />
+                        <img src="./ASSETS/${q.img}" />
                         <h3>${q.pname}</h3>
                         <h4>${q.cost}</h4>
                         <p>${q.spec}</p>
@@ -154,7 +154,7 @@ lapdata.forEach( (s) => {
     er.classList.add('lcard')
     zy.appendChild(er)
     er.innerHTML = `
-    <img src="/ASSETS/${s.img}" />
+    <img src="./ASSETS/${s.img}" />
     <h3>${s.lname}</h3>
     <h4>${s.cost}</h4>
     <p>${s.spec}</p>
@@ -166,7 +166,7 @@ data.forEach( (e) => {
     newel.classList.add('card')
     xy.appendChild(newel)
     newel.innerHTML = `
-                        <img src="/ASSETS/${e.img}" />
+                        <img src="./ASSETS/${e.img}" />
                         <h3>${e.pname}</h3>
                         <h4>${e.cost}</h4>
                         <p>${e.spec}</p>
