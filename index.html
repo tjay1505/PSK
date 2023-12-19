@@ -10,23 +10,29 @@
     <div id="header">
 
         <div id="logo">
-            <h4>psk</h4>
+            <div class="cube-wrap">
+                <div class="cube">
+                  <div class="side top"></div>
+                  <div class="side bottom"></div>
+                  <div class="side front"></div>
+                  <div class="side back"></div>
+                  <div class="side left"></div>
+                  <div class="side right"></div>
+                </div>
+              </div>
+            <h4>PSK</h4>
         </div>
 
         <div id="searchbar">
-            <input type="text" id="SB">
+            <input type="text" id="SB" onkeydown="keyPressed(event)">
         </div>
 
         <div id="navbar">
-            <img src="./ASSETS/search-interface-symbol.png" onclick="searchBar(document.getElementById('SB').value)" alt="">
+            <img src="./ASSETS/search-interface-symbol.png" id="searchImg" onclick="searchBar(document.getElementById('SB').value)" alt="">
             <img src="./ASSETS/menu.png" alt="" onclick="openMenu()">
             <div id="menubox">
-                <h4>list</h4>
-                <h4>list</h4>
-                <h4>list</h4>
-                <h4>list</h4>
-                <h4>list</h4>
-                <h4>list</h4>
+                
+
             </div>
         </div>
 
@@ -46,8 +52,38 @@
        
     </div>
 
-    
-     
+    <div id="footer">
+        <div class="mail" >
+            <input type="email" required>
+            <button>contact Us</button>
+        </div>
+        <div class="call">
+            Call : &#128222 <a style="text-decoration: none; color: rgb(7, 109, 192); border: 1px solid;" href="tel:756768">988567457</a>
+        </div>
+        <div class="contact">
+            <img src="./ASSETS/facebook.png" alt="">
+            <img src="./ASSETS/whatsapp.png" alt="">
+            <img src="./ASSETS/twitter.png" alt="" style="border: 1px solid; border-radius: 50%;">
+            <img src="./ASSETS/instagram.png" alt="">
+        </div>
+        <div class="works">
+            
+            <p>interior works</p>
+            <p>electrical application</p>
+            <p>camera fitting</p>
+            <p>servaliance</p>
+            <p>house decores</p>
+            <p>party managements</p>
+            <p>event arrangement</p>
+            <p>web hosting</p>
+            <p>google firestore</p>
+            <p>mongoDB</p>
+            <p>reactJS</p>
+        </div>
+        <div class="copyright">
+            &#169 copyrights claims @2023 | tjay, Inc | Ph : <a style="text-decoration: none; color: rgb(7, 109, 192);" href="tel:756768">567457</a>
+        </div>
+    </div>
 
     <script src="./venila.js" ></script>
 </body>

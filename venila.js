@@ -82,43 +82,62 @@ const lapdata = [
 ]
 
 const sb = document.getElementById('SB')
+const sec0 = document.getElementById('sec-0')
+
 let tf = false
 
 function searchBar(s){
-
-   
-
     if(s.length == 0){
         toggleSearchBar()
     }
     else{
+        sec0.innerHTML = ''
         tf = false
         toggleSearchBar()
-        doSearch(s)
+        doEverySearch(s)
+
     }
+}
+//++++++++*****+++++
+function keyPressed(event){
+    if(event.key == 'Enter'){
+        searchBar(document.getElementById('SB').value)
+    }else{
+        //
+    }
+}
+//++++++++++++++++++
+function doEverySearch(s){
+    data.forEach(element => {
+
+        let rt = element.pname.match(s)
+
+        if( rt == s){
+            //sec0.innerHTML = ''
+            doUpLoad(element)
+        }
+        else{
+           console.log('fail to load');
+        }
+
+    });
 }
 
 //=================
-const sec0 = document.getElementById('sec-0')
-function doSearch(s){
-    sec0.innerHTML = ''
-    data.forEach( (q) => {
-        if(s === q.pname){
-            console.log('sucsecc');
+function doUpLoad(s){
+            console.log(s);
             const qwer = document.createElement('div')
-           // qwer.classList.add('lcard')
-            sec0.append(qwer)
+            sec0.appendChild(qwer)
+            //qwer.classList.add('card')
+
             qwer.innerHTML = `
-                        <img src="./ASSETS/${q.img}" />
-                        <h3>${q.pname}</h3>
-                        <h4>${q.cost}</h4>
-                        <p>${q.spec}</p>
+                        <img src="./ASSETS/${s.img}" />
+                        <h3>${s.pname}</h3>
+                        <h4>${s.cost}</h4>
+                        <p>${s.spec}</p>
                         `
-        }
-        else{
-            console.log('fail');
-        }
-    });
+              
+
 }
 //=================
 function toggleSearchBar(){
@@ -172,3 +191,7 @@ data.forEach( (e) => {
                         <p>${e.spec}</p>
                         `
 });
+//@@@@@@@@@@@@@@@@@@@@@@@@@@#$$$$$$$$$$$$$$$$$
+window.addEventListener('scroll', () => {
+    document.body.style.setProperty('--scroll',window.pageYOffset / (document.body.offsetHeight - window.innerHeight));
+  }, false);
